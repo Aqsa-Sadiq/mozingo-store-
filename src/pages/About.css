@@ -1,0 +1,147 @@
+.about-page {
+  font-family: Arial, sans-serif;
+  color: #222;
+}
+
+/* HERO */
+.about-hero {
+  text-align: center;
+  padding: 60px 20px 30px;
+  background: #f9f9f9;
+}
+
+.about-hero h1 {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+.about-hero p {
+  max-width: 850px;
+  margin: auto;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #555;
+}
+
+/* BOXES */
+.about-boxes {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.box {
+  background: white;
+  padding: 20px;
+  width: 280px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.box h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.box p {
+  font-size: 15px;
+  color: #666;
+}
+
+/* IMAGE */
+.about-image {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.about-image img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+/* NOTE */
+.about-note {
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 16px;
+  color: #444;
+  max-width: 850px;
+  margin: auto;
+}
+
+/* FEATURES */
+.about-features {
+  padding: 60px 20px;
+}
+
+.about-features h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+.features-grid {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  max-width: 1100px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.feature-img img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 12px;
+}
+
+.feature-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.feature-list li {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* COMMUNITY */
+.about-community {
+  text-align: center;
+  padding: 50px 20px;
+  background: #111;
+  color: white;
+}
+
+.about-community h2 {
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+.about-community p {
+  font-size: 17px;
+  max-width: 750px;
+  margin: auto;
+  line-height: 1.6;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .about-hero h1 {
+    font-size: 30px;
+  }
+
+  .about-image img {
+    height: 280px;
+  }
+
+  .features-grid {
+    flex-direction: column;
+    text-align: center;
+  }
+}

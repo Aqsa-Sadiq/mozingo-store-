@@ -1,13 +1,122 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Poppins', sans-serif;
+  background: #f8f8f8;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Top Nav */
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: #000;
+  color: #fff;
+  flex-wrap: wrap;
 }
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 8px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+  background: #f0a500;
+  color: #000;
+}
+
+/* Category Nav */
+.category-nav {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  padding: 10px 0;
+  background: #111;
+  flex-wrap: wrap;
+}
+
+.category-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 5px 15px;
+  border-radius: 8px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.category-nav a:hover {
+  background: #f0a500;
+  color: #000;
+}
+
+/* Mobile Responsive */
+@media(max-width:768px){
+  .top-nav, .category-nav{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links{
+    justify-content: center;
+    margin-top: 10px;
+  }
+}
+
+
+.product-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.btn-group button {
+  padding: 8px 15px;
+  border: none;
+  background: #000;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  flex: 1;
+  margin: 0 5px;
+  transition: background 0.3s;
+}
+
+.btn-group button:hover {
+  background: #f0a500;
+}
+
