@@ -1,181 +1,68 @@
-import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-import Home from "./pages/Home";
-import Shop from "./pages/Shop";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import ProductDetail from "./pages/ProductDetail";
-import Cart from "./pages/Cart";
-import Checkout from "./pages/Checkout";
-import Wishlist from "./pages/Wishlist";
-import OrderTracking from "./pages/OrderTracking";
-import CategoryPage from "./pages/CategoryPage";
+import { useState, useEffect } from "react";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
+import Home from "./pages/Home";
+import Cart from "./pages/Cart";
+import Credits from "./pages/Credits";
+import Contact from "./pages/Contact";
+import Checkout from "./pages/Checkout";
+import Policies from "./pages/Policies";
+import HowItWorks from "./pages/HowItWorks";
+
 function App() {
-  // ============================
-  // CART STATE
-  // ============================
-  const [cartItems, setCartItems] = useState(() => {
-    const savedCart = localStorage.getItem("cart");
-    return savedCart ? JSON.parse(savedCart) : [];
+  // Initialize cart from localStorage
+  const [cart, setCart] = useState(() => {
+    try {
+      return JSON.parse(localStorage.getItem("cart")) || [];
+    } catch {
+      return [];
+    }
   });
 
-  // ============================
-  // WISHLIST STATE
-  // ============================
-  const [wishlistItems, setWishlistItems] = useState(() => {
-    const savedWishlist = localStorage.getItem("wishlist");
-    return savedWishlist ? JSON.parse(savedWishlist) : [];
-  });
-
-  // ============================
-  // LOCAL STORAGE SAVE
-  // ============================
+  // Save cart to localStorage whenever it changes
   useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cartItems));
-  }, [cartItems]);
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
 
-  useEffect(() => {
-    localStorage.setItem("wishlist", JSON.stringify(wishlistItems));
-  }, [wishlistItems]);
-
-  // ============================
-  // CART FUNCTIONS
-  // ============================
-  const addToCart = (product) => {
-    const existing = cartItems.find((item) => item.id === product.id);
-
+  // Function to add item to cart
+  const addToCart = (item) => {
+    // Check if item already exists
+    const existing = cart.find((i) => i.id === item.id);
     if (existing) {
-      setCartItems(
-        cartItems.map((item) =>
-          item.id === product.id
-            ? { ...item, qty: item.qty + 1 }
-            : item
+      // Update quantity if exists
+      setCart(
+        cart.map((i) =>
+          i.id === item.id ? { ...i, quantity: i.quantity + item.quantity } : i
         )
       );
     } else {
-      setCartItems([...cartItems, { ...product, qty: 1 }]);
+      setCart([...cart, item]);
     }
   };
 
-  const removeFromCart = (id) => {
-    setCartItems(cartItems.filter((item) => item.id !== id));
-  };
+  // Total quantity for navbar badge
+  const totalQuantity = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
 
-  const increaseQty = (id) => {
-    setCartItems(
-      cartItems.map((item) =>
-        item.id === id ? { ...item, qty: item.qty + 1 } : item
-      )
-    );
-  };
-
-  const decreaseQty = (id) => {
-    setCartItems(
-      cartItems.map((item) =>
-        item.id === id && item.qty > 1
-          ? { ...item, qty: item.qty - 1 }
-          : item
-      )
-    );
-  };
-
-  // ============================
-  // ✅ UPDATED WISHLIST FUNCTIONS
-  // ============================
-  const addToWishlist = (product) => {
-    const already = wishlistItems.find((item) => item.id === product.id);
-
-    if (already) {
-      alert("Already in Wishlist!");
-      return;
-    }
-
-    setWishlistItems([...wishlistItems, product]);
-  };
-
-  const removeFromWishlist = (id) => {
-    setWishlistItems(wishlistItems.filter((item) => item.id !== id));
-  };
-
-  // ============================
-  // ROUTES
-  // ============================
   return (
     <BrowserRouter>
-      {/* Navbar with live counts */}
-      <Navbar
-        cartCount={cartItems.reduce((a, c) => a + c.qty, 0)}
-        wishlistCount={wishlistItems.length}
-      />
+      {/* Navbar with total quantity */}
+      <Navbar cartCount={totalQuantity} />
 
       <Routes>
-        {/* Home */}
+        {/* Pass cart state and addToCart */}
         <Route
           path="/"
-          element={
-            <Home addToCart={addToCart} addToWishlist={addToWishlist} />
-          }
+          element={<Home cart={cart} setCart={setCart} addToCart={addToCart} />}
         />
-
-        {/* Shop */}
-        <Route
-          path="/shop"
-          element={
-            <Shop addToCart={addToCart} addToWishlist={addToWishlist} />
-          }
-        />
-
-        {/* Category */}
-        <Route
-          path="/category/:slug"
-          element={
-            <CategoryPage
-              addToCart={addToCart}
-              addToWishlist={addToWishlist}
-            />
-          }
-        />
-
-        {/* Product Detail */}
-        <Route path="/product/:id" element={<ProductDetail />} />
-
-        {/* Cart */}
-        <Route
-          path="/cart"
-          element={
-            <Cart
-              cartItems={cartItems}
-              removeFromCart={removeFromCart}
-              increaseQty={increaseQty}
-              decreaseQty={decreaseQty}
-            />
-          }
-        />
-
-        {/* Checkout */}
-        <Route path="/checkout" element={<Checkout cartItems={cartItems} />} />
-
-        {/* Wishlist */}
-        <Route
-          path="/wishlist"
-          element={
-            <Wishlist
-              wishlistItems={wishlistItems}
-              removeFromWishlist={removeFromWishlist}
-              addToCart={addToCart}
-            />
-          }
-        />
-
-        {/* Other Pages */}
-        <Route path="/track-order" element={<OrderTracking />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/cart" element={<Cart cart={cart} setCart={setCart} />} />
+        <Route path="/credits" element={<Credits />} />
+        <Route path="/how" element={<HowItWorks />} />
+        <Route path="/checkout" element={<Checkout />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/policies" element={<Policies />} />
       </Routes>
 
       <Footer />
