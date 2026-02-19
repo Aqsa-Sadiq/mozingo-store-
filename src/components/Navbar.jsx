@@ -5,37 +5,55 @@ import { CartContext } from "../context/CartContext";
 export default function Navbar() {
   const { cart } = useContext(CartContext);
 
-  // Total quantity for cart badge
   const totalQuantity = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
 
   const linkStyle = {
     color: "#fff",
     fontWeight: "bold",
     textDecoration: "none",
+    whiteSpace: "nowrap",
   };
 
   return (
     <nav
       style={{
-        padding: "15px 40px",
+        padding: "15px 20px",
         display: "flex",
         justifyContent: "space-between",
+        alignItems: "center",
         background: "#5b21b6",
         color: "white",
-        position: "sticky",  // makes navbar stick
-        top: 0,             // sticks to top
-        zIndex: 1000,       // ensures it stays above other content
+        position: "sticky",
+        top: 0,
+        zIndex: 1000,
+        flexWrap: "wrap", // ✅ allows wrapping on small screens
       }}
     >
-      <h2 style={{ margin: 0 }}>MozingoX</h2>
+      <h2 style={{ margin: 0, fontSize: "1.5rem" }}>MozingoX</h2>
 
-      <div style={{ display: "flex", gap: "20px", alignItems: "center" }}>
+      <div
+        style={{
+          display: "flex",
+          gap: "15px",
+          alignItems: "center",
+          flexWrap: "wrap", // ✅ wrap links when screen is small
+          marginTop: "10px", // small top margin for mobile wrap
+        }}
+      >
         <Link to="/" style={linkStyle}>Home</Link>
         <Link to="/credits" style={linkStyle}>Credits</Link>
         <Link to="/how" style={linkStyle}>How It Works</Link>
         <Link to="/cart" style={linkStyle}>
           Cart {totalQuantity > 0 && (
-            <span style={{ background: "red", borderRadius: "50%", padding: "2px 8px", marginLeft: 5 }}>
+            <span
+              style={{
+                background: "red",
+                borderRadius: "50%",
+                padding: "2px 8px",
+                marginLeft: 5,
+                fontSize: "0.8rem",
+              }}
+            >
               {totalQuantity}
             </span>
           )}
