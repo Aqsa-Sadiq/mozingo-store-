@@ -25,13 +25,13 @@ export default function Contact() {
       </h1>
       <p style={{ fontSize: "1.2rem", marginBottom: 30, color: "#9274fc" }}>
         💡 We’re Here to Help You! <br />
-        If you have any questions or need assistance with your Arcade tech Solution, our support team is ready to help.
+        If you have any questions or need assistance with your Arcade Tech Solution, our support team is ready to help.
       </p>
 
       {/* How to Reach Us */}
       <section style={{ marginBottom: 30 }}>
         <h2 style={{ color: "#a78bfa" }}>How to Reach Us</h2>
-        <p>Email: contactus@mozingo.co.uk</p>
+        <p>Email: Arcadetechsolutions1@gmail.com</p>
         <p>Phone / WhatsApp: +44 07470808393 (Fastest response via WhatsApp!)</p>
       </section>
 

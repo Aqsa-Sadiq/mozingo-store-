@@ -5,7 +5,7 @@ export default function Policies() {
     {
       title: "Privacy Policy",
       content: [
-        "At Arcade tech solution, we respect your privacy and ensure all personal information is handled securely.",
+        "At Arcade Tech solution, we respect your privacy and ensure all personal information is handled securely.",
         "Information Collected:",
         "• Contact info submitted via forms",
         "• Payment confirmation details submitted to our clients",
@@ -17,15 +17,15 @@ export default function Policies() {
         "• We do not sell, trade, or share personal information",
         "• Data is handled according to UK data protection regulations",
         "Third-Party Platforms:",
-        "• Arcade tech solution is not responsible for privacy practices of external gaming platforms or social media pages",
+        "• Arcade Tech solution is not responsible for privacy practices of external gaming platforms or social media pages",
       ],
     },
     {
       title: "Terms and Conditions",
       content: [
-        "By purchasing from Arcade tech solution, you agree to the following:",
+        "By purchasing from Arcade Tech solution, you agree to the following:",
         "Service Scope:",
-        "• Arcade tech solution provides digital credits for use in supported games and services.",
+        "• Arcade Tech solution provides digital credits for use in supported games and services.",
         "• We sell credits only; any game or service access is your responsibility.",
         "Purchasing Credits:",
         "• Credits are purchased through our secure checkout system.",
@@ -41,7 +41,7 @@ export default function Policies() {
         "Refunds:",
         "• All digital credit purchases are final and non-refundable, except for technical payment errors.",
         "Changes to Terms:",
-        "• Arcade tech solution reserves the right to update these terms at any time without prior notice.",
+        "• Arcade Tech solution reserves the right to update these terms at any time without prior notice.",
       ],
     },
     {
@@ -56,7 +56,7 @@ export default function Policies() {
     {
       title: "Shipping Policy",
       content: [
-        "All purchases from Arcade tech solution are digital credits.",
+        "All purchases from Arcade Tech solution are digital credits.",
         "No physical products are shipped.",
         "Credits are delivered instantly to your account after payment confirmation.",
         "An invoice will be sent to your email within 24 hours of purchase.",

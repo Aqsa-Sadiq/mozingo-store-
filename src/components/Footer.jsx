@@ -70,7 +70,7 @@ export default function Footer({ theme = "dark" }) {
           fontSize: "14px",
         }}
       >
-        © 2026 Arcade tech Solution, Powered by Tech Solution |{" "}
+        © 2026 Arcade Tech Solution, Powered by Tech Solution |{" "}
         <a href="/terms" style={linkStyle(bottomText)}>
           Terms & Policies
         </a>

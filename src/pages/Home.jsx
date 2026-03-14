@@ -76,7 +76,7 @@ export default function Home({ cart, setCart }) {
         }}
       >
         <div style={{ position: "relative", zIndex: 2 }}>
-          <h1 style={{ fontSize: "2.8rem", marginBottom: 20 }}> Arcade tech Solution</h1>
+          <h1 style={{ fontSize: "2.8rem", marginBottom: 20 }}>Tech Solution</h1>
           <p style={{ fontSize: "1.1rem", marginBottom: 30 }}>
             Buy instant digital credits safely & easily for your favorite games
           </p>
@@ -127,7 +127,7 @@ export default function Home({ cart, setCart }) {
 
         {/* RIGHT CONTENT */}
         <div style={{ flex: "1 1 300px", maxWidth: "500px" }}>
-          <h2 style={{ fontSize: "2rem", fontWeight: "bold" }}>Arcade tech Solution CREDITS</h2>
+          <h2 style={{ fontSize: "2rem", fontWeight: "bold" }}>ArcadeTech Solution CREDITS</h2>
           <p style={{ marginTop: "10px", fontSize: "16px", color: "#444" }}>$1.00 USD</p>
 
           {/* Quantity + Buttons */}
@@ -213,7 +213,7 @@ export default function Home({ cart, setCart }) {
           color: "white",
         }}
       >
-        <h2 style={{ fontSize: "2rem", marginBottom: 30 }}>Why Choose Arcade tech Solution?</h2>
+        <h2 style={{ fontSize: "2rem", marginBottom: 30 }}>Why Choose Arcade Tech Solution?</h2>
         <div
           style={{
             display: "flex",

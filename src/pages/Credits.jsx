@@ -26,7 +26,7 @@ export default function Credits() {
 
   return (
     <div style={{ padding: 40, maxWidth: 1000, margin: "auto" }}>
-      <h1 style={{ textAlign: "center", marginBottom: 40 }}>Arcade tech Solution Credits</h1>
+      <h1 style={{ textAlign: "center", marginBottom: 40 }}>Arcade Tech Solution Credits</h1>
       {products.map((product) => (
         <div key={product.id} style={productCardStyle}>
           <img src={product.img} alt={product.title} style={imgStyle} />

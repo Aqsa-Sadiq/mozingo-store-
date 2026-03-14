@@ -29,7 +29,7 @@ export default function Navbar() {
         flexWrap: "wrap", 
       }}
     >
-      <h2 style={{ margin: 0, fontSize: "1.5rem" }}>Arcade tech Solution</h2>
+      <h2 style={{ margin: 0, fontSize: "1.5rem" }}>Tech Solution</h2>
 
       <div
         style={{
