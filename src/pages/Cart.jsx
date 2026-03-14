@@ -10,7 +10,7 @@ export default function Cart() {
     <div style={{ padding: 40 }}>
       <h2>🛒 Your Cart</h2>
       {cart.length === 0 ? (
-        <p>Cart is empty 😢</p>
+        <p>Cart is empty </p>
       ) : (
         <>
           {cart.map((item) => (
@@ -23,7 +23,7 @@ export default function Cart() {
                 marginTop: 20,
                 padding: 15,
                 borderRadius: 10,
-                boxShadow: "0 3px 10px rgba(0,0,0,0.2)",
+                boxShadow: "0 3px 10px rgba(158, 62, 248, 0.2)",
               }}
             >
               <div>

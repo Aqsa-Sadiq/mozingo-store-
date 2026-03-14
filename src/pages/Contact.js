@@ -23,9 +23,9 @@ export default function Contact() {
       <h1 style={{ fontSize: "2.5rem", color: "#7c3aed", marginBottom: 10 }}>
         Contact Us
       </h1>
-      <p style={{ fontSize: "1.2rem", marginBottom: 30, color: "#e0d7ff" }}>
+      <p style={{ fontSize: "1.2rem", marginBottom: 30, color: "#9274fc" }}>
         💡 We’re Here to Help You! <br />
-        If you have any questions or need assistance with your Mozingo Credits, our support team is ready to help.
+        If you have any questions or need assistance with your Arcade tech Solution, our support team is ready to help.
       </p>
 
       {/* How to Reach Us */}

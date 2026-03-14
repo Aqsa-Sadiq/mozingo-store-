@@ -2,9 +2,9 @@ export default function HowItWorks() {
   return (
     <div style={{ padding: "50px 20px", maxWidth: 900, margin: "auto" }}>
       <h1 style={{ fontSize: "2.5rem", color: "#7c3aed", marginBottom: 15 }}>
-        How It Works – Mozingo Credits
+        How It Works – Arcade tech Solution
       </h1>
-      <p style={{ fontSize: "1.2rem", marginBottom: 30, color: "#e0d7ff" }}>
+      <p style={{ fontSize: "1.2rem", marginBottom: 30, color: "#a48cfc" }}>
         💡 Recharge Your Wallet in 3 Easy Steps
       </p>
 

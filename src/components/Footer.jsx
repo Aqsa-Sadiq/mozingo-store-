@@ -34,7 +34,7 @@ export default function Footer({ theme = "dark" }) {
           </a>
 
           <a href="/credits" style={linkStyle(textColor)}>
-            Mozingo Credits
+            Arcade Tech Solution Credits
           </a>
 
           <a href="/how-it-works" style={linkStyle(textColor)}>
@@ -70,7 +70,7 @@ export default function Footer({ theme = "dark" }) {
           fontSize: "14px",
         }}
       >
-        © 2026 MOZINGOX, Powered by MOZNGO |{" "}
+        © 2026 Arcade tech Solution, Powered by Tech Solution |{" "}
         <a href="/terms" style={linkStyle(bottomText)}>
           Terms & Policies
         </a>

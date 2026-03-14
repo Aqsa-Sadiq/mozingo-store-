@@ -26,18 +26,18 @@ export default function Navbar() {
         position: "sticky",
         top: 0,
         zIndex: 1000,
-        flexWrap: "wrap", // ✅ allows wrapping on small screens
+        flexWrap: "wrap", 
       }}
     >
-      <h2 style={{ margin: 0, fontSize: "1.5rem" }}>MozingoX</h2>
+      <h2 style={{ margin: 0, fontSize: "1.5rem" }}>Arcade tech Solution</h2>
 
       <div
         style={{
           display: "flex",
           gap: "15px",
           alignItems: "center",
-          flexWrap: "wrap", // ✅ wrap links when screen is small
-          marginTop: "10px", // small top margin for mobile wrap
+          flexWrap: "wrap", 
+          marginTop: "10px", 
         }}
       >
         <Link to="/" style={linkStyle}>Home</Link>
